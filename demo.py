@@ -38,7 +38,9 @@ def main(args):
 
     for i, image_path in enumerate(image_path_list):
 
-        name = image_path.strip().split('/')[-1][:-4]
+        # name = image_path.strip().split('/')[-1][:-4]
+        name = os.path.basename(image_path)
+        name = os.path.splitext(name)[0]
 
         # read image
         image = imread(image_path)
